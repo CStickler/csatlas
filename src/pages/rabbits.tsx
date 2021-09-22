@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import { Header, Footer } from '../components';
 import { client } from '../client';
-import TeamMember from '../components/rabbitsIndv';
+import RabbitMember from '../components/rabbitMember';
 
-export default function Rabbits() {
+export default function Rabbit() {
   const { useQuery } = client;
   const { generalSettings } = useQuery();
 
-  const rabbitsIndv = useQuery().rabbitsIndv()?.nodes;
+  const rabbitMembers = useQuery().rabbitMembers()?.nodes;
 
   return (
     <>
@@ -17,15 +17,15 @@ export default function Rabbits() {
       />
 
       <Head>
-        <title>Meet the Rabbits!! - {generalSettings.title}</title>
+        <title>Meet the Rabbits!!!xd - {generalSettings.title}</title>
       </Head>
 
       <main className="content content-single">
         <div className="wrap">
-          <h2>Team Members</h2>
+          <h2>Rabbit Members</h2>
 
-          {rabbitsIndv.map((rabbitsIndv) => (
-            <RabbitsIndv key={rabbitsIndv.id} rabbitsIndv={rabbitsIndv} />
+          {rabbitMembers.map((rabbitMember) => (
+            <RabbitMember key={rabbitMember.id} rabbitMember={rabbitMember} />
           ))}
         </div>
       </main>
