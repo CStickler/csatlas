@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import { Header, Footer } from '../components';
 import { client } from '../client';
+import TeamMember from '../components/rabbitsIndv';
 
 export default function Rabbits() {
   const { useQuery } = client;
   const { generalSettings } = useQuery();
-  const teamMembers = useQuery().teamMembers()?.nodes;
+
+  const rabbitsIndv = useQuery().rabbitsIndv()?.nodes;
 
   return (
     <>
@@ -15,12 +17,16 @@ export default function Rabbits() {
       />
 
       <Head>
-        <title>Meet the Team - {generalSettings.title}</title>
+        <title>Meet the Rabbits!! - {generalSettings.title}</title>
       </Head>
 
       <main className="content content-single">
         <div className="wrap">
           <h2>Team Members</h2>
+
+          {rabbitsIndv.map((rabbitsIndv) => (
+            <RabbitsIndv key={rabbitsIndv.id} rabbitsIndv={rabbitsIndv} />
+          ))}
         </div>
       </main>
 
