@@ -32,7 +32,7 @@ export default function Page() {
 
       <main className="content">
         <Hero
-          title="Get Started with Headless"
+          title="Yo look at these changes"
           buttonText="Developer Docs"
           buttonURL="https://faustjs.org"
           button2Text="Headless on GitHub"
@@ -52,6 +52,9 @@ export default function Page() {
               tutorials
             </a>{' '}
             to make building headless WordPress sites fast and fun.
+          </p>
+          <p> 
+           Well hello there.
           </p>
         </Hero>
         <section className={styles.explore}>
