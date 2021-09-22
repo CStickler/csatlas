@@ -2,8 +2,10 @@ import Head from 'next/head';
 import { Header, Footer } from '../components';
 import { client } from '../client';
 
-export default function Rabbit() {
-  const { generalSettings } = client.useQuery();
+export default function Rabbits() {
+  const { useQuery } = client;
+  const { generalSettings } = useQuery();
+  const teamMembers = useQuery().teamMembers()?.nodes;
 
   return (
     <>
@@ -13,7 +15,7 @@ export default function Rabbit() {
       />
 
       <Head>
-        <title>Meet the Rabbits - {generalSettings.title}</title>
+        <title>Meet the Team - {generalSettings.title}</title>
       </Head>
 
       <main className="content content-single">
