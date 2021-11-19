@@ -9,10 +9,6 @@ export default function Rabbits() {
 
   return (
     <>
-      <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-      />
 
       <Head>
         <title>Meet the Team - {generalSettings.title}</title>
